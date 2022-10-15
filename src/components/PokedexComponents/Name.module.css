@@ -1,0 +1,21 @@
+.name {
+  border: 2px solid #4a5958;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+.name p {
+  margin: 0;
+}
+.poke-img,
+.name {
+  border-radius: 5px;
+  color: #181f1f;
+  background: rgb(110, 156, 196);
+  background: linear-gradient(
+    121deg,
+    rgb(123, 173, 216) 37%,
+    rgba(157, 201, 238, 1) 50%,
+    rgb(123, 173, 216) 66%
+  );
+}

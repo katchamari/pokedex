@@ -1,0 +1,15 @@
+.light {
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.light .highlight {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  display: block;
+  border-radius: 50%;
+  right: -5%;
+  bottom: 5%;
+}

@@ -1,0 +1,41 @@
+.screen,
+.screen-inner {
+  clip-path: polygon(100% 0, 100% 100%, 80% 100%, 20% 100%, 0% 80%, 0 0);
+  border-radius: 10px;
+}
+.screen {
+  background: #841310;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4px;
+  width: 80%;
+  margin: auto;
+}
+.screen-inner {
+  background: rgb(249,215,192);
+  background: linear-gradient(121deg, rgba(249,215,192,1) 4%, rgba(248,234,223,1) 21%, rgba(248,239,231,1) 50%, rgba(248,235,224,1) 80%, rgba(249,215,192,1) 95%);
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.screen-inner > * {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.holes {
+  justify-content:center;
+}
+
+.holes>*:not(:last-of-type) {
+    margin-right: 20px;
+  }
+
+.bottom-right-lines {
+  position: relative;
+  bottom: -30px;
+}

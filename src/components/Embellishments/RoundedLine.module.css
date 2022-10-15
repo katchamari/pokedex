@@ -1,0 +1,10 @@
+.line{
+    width:30%;
+    height:4px;
+    border-radius:10px;
+    background:#222222;
+    display:block;
+    margin-bottom:3px;
+    margin-right:0;
+    margin-left:auto;
+  }

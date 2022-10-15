@@ -1,0 +1,8 @@
+.hole {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #b80e00;
+  background: #fe454a;
+  display:inline-block;
+}

@@ -1,0 +1,114 @@
+.poke-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  position: relative;
+}
+
+.poke-left-inner {
+  background: rgb(225, 8, 36);
+  background: linear-gradient(
+    121deg,
+    rgba(225, 8, 36, 1) 9%,
+    rgba(250, 94, 114, 1) 38%,
+    rgba(255, 112, 130, 1) 50%,
+    rgba(251, 97, 116, 1) 65%,
+    rgba(225, 8, 36, 1) 91%
+  );
+  box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+  -webkit-box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+  -moz-box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+  width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* .poke-left-inner{
+  padding: 20px;
+} */
+
+.top-button {
+  display: inline-block;
+  background: #0044ba;
+  width: 10%;
+  height: 10px;
+  margin-left: 15%;
+  border-radius: 10px 10px 0 0;
+  border-top: 2px solid rgba(32, 3, 2, 1);
+  align-self:flex-start;
+  top:-10px;
+}
+
+@media only screen and (min-width: 992px) {
+  .top-button {
+    position: absolute;
+    top: -10px;
+  }
+}
+
+.top-decorations {
+  margin-bottom: 50px;
+  position: relative;
+  flex: 0 1 160px;
+}
+
+.top-shadow {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+}
+
+.left-body {
+  position: relative;
+  flex: 1;
+  padding-bottom: 50px;
+}
+
+.inner-shadow {
+  position: absolute;
+  top: -75px;
+  left: 20px;
+  width: calc(100% - 5% - 20px);
+  height: calc(100% + 50px);
+}
+
+.big-blue-circle {
+  height: 100px;
+  width: 100px;
+  background: #fffafc;
+  border: 4px solid #c92533;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.colored-circles {
+  position: absolute;
+  left: calc(100px + 40px);
+  top: 15px;
+  display: flex;
+}
+
+.colored-circles > * {
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  .poke-left-inner {
+    box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+    -webkit-box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+    -moz-box-shadow: 0 0 0 2px rgba(32, 3, 2, 1);
+    height: calc(100% - 20px);
+    width:100%;
+    border-radius: 10px 0 0 10px;
+  }
+  .poke-left {
+    justify-content: center;
+  }
+}

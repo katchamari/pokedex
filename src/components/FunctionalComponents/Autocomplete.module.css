@@ -1,0 +1,41 @@
+.autocomplete{
+    position:relative;
+    z-index:999;
+}
+
+.autocomplete-results{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    width:100%;
+    background:#FFFDFF;
+    box-shadow:0 9px 6px 0px rgba(132, 19, 16, 0.4);
+    overflow:hidden;
+
+}
+
+.autocomplete .input{
+    width:100%;
+    padding:5px;
+    border:none;
+    text-transform:capitalize;
+}
+
+.autocomplete-results li:hover button{
+    background:rgb(88, 161, 218);
+    color:#FFF;
+}
+
+.autocomplete-results>li{
+    font-size:14px;
+}
+
+.autocomplete-results li button{
+    width:100%;
+    padding:5px 20px;
+    border:none;
+    background:none;
+    text-transform:capitalize;
+    text-align:left;
+}

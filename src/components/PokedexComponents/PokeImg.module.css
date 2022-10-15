@@ -1,0 +1,23 @@
+.poke-img{
+    border-radius: 5px;
+    color: #181f1f;
+    background: rgb(110, 156, 196);
+    background: linear-gradient(
+      121deg,
+      rgb(123, 173, 216) 37%,
+      rgba(157, 201, 238, 1) 50%,
+      rgb(123, 173, 216) 66%
+    );
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #4a5958;
+    width: 80%;
+    padding: 15px;
+    height:200px;
+  }
+  .poke-img > img {
+    height: 100%;
+    object-fit: contain;
+  }
