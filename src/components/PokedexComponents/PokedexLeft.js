@@ -2,7 +2,8 @@ import styles from "./PokedexLeft.module.css";
 import ColoredLight from "../Embellishments/ColoredLight";
 import PokeDescription from "./PokeDescription";
 import MainScreen from "./MainScreen";
-const PokedexLeft = () => {
+const PokedexLeft = ({pokemon}) => {
+  const {description} = pokemon;
   return (
     <div className={styles["poke-left"]}>
       <span className={styles["top-button"]}></span>
@@ -24,9 +25,9 @@ const PokedexLeft = () => {
         </div>
         <div className={styles["left-body"]}>
           <img className={styles['inner-shadow']} src='imgs/pokedex-inner-shadow.png' />
-          <MainScreen />
+          <MainScreen pokemon={pokemon} />
 
-          <PokeDescription />
+          <PokeDescription description={description} />
         </div>
       </div>
     </div>

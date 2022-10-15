@@ -8,7 +8,16 @@ import PokedexRight from "./PokedexRight";
 const Pokedex = () => {
   const [pokeArray, fillPokeArray] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon,setPokemon] = useState({
+    name:'Bulbasaur', 
+    num:'', 
+    defaultImg:'',
+    description:''
+  })
 
+
+
+// fills array with names for autocomplete
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/?limit=100000&offset=0`)
       .then((res) => {
@@ -19,14 +28,41 @@ const Pokedex = () => {
       });
   }, []);
 
+  useEffect(() => {
+      fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name.toLowerCase()}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          const engDescription = data.flavor_text_entries.filter(entry => entry.language.name === 'en');
+
+          fetch(`https://pokeapi.co/api/v2/pokemon/${data.varieties[0].pokemon.name}`)
+            .then((data2) => {
+              return data2.json();
+            })
+            .then((data3) => {
+              setPokemon({
+                ...pokemon, 
+                num:data3.order, 
+                defaultImg:data3.sprites.front_default,
+                description:String(engDescription[0].flavor_text)
+              })
+            });
+
+            console.log(pokemon);
+        });
+  }, [pokemon.name])
+
+
+
   return (
     <div className={styles.pokedex}>
-      <PokedexLeft />
+      <PokedexLeft pokemon={pokemon} />
       <PokedexDivider />
       <PokedexRight
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        search={[searchQuery, setSearchQuery]}
         pokeList={pokeArray}
+        pokeData={[pokemon,setPokemon]}
       />
     </div>
   );

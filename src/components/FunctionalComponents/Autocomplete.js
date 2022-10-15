@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./Autocomplete.module.css";
 
-const Autocomplete = ({arr, searchQuery, setSearchQuery}) => {
+const Autocomplete = ({arr, search, savedQuery}) => {
   const [filteredResults, setFilteredResults] = useState([]);
+  const [searchQuery, setSearchQuery] = search;
+  const [query, saveQuery] = savedQuery;
 
   const onChange = (e) => {
     const userInput = e.currentTarget.value;
@@ -24,22 +26,22 @@ const Autocomplete = ({arr, searchQuery, setSearchQuery}) => {
     }
 
     setFilteredResults(filteredArr);
-    console.log(filteredResults);
   };
+
+  const queryItem = (item) => {
+    setSearchQuery(item);
+    saveQuery({...savedQuery, name:item});
+  }
 
   let resultList = filteredResults.map((result, index) => {
     return (
       index < 8 && (
         <li key={index}>
-          <button onMouseDown={() => setSearchQuery(result.name)} href="#">{result.name}</button>
+          <button onMouseDown={() => queryItem(result.name)} href="#">{result.name}</button>
         </li>
       )
     );
   });
-
-  useEffect(()=> {
-    console.log(searchQuery);
-  })
 
   const hideResults = (e) => {
     e.preventDefault();

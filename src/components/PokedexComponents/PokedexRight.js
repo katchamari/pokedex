@@ -7,7 +7,7 @@ const PokedexRight = (props) => {
         <div className={styles['clip-path-fill']}></div>
       </div>
       <div className={styles['poke-right-bottom']}>
-        <Autocomplete searchQuery={props.searchQuery} setSearchQuery={props.setSearchQuery} arr={props.pokeList} />
+        <Autocomplete savedQuery={props.pokeData} search={props.search} setSearchQuery={props.setSearchQuery} arr={props.pokeList} />
       </div>
     </div>
   );
