@@ -1,9 +1,9 @@
 import styles from "./PokeDescription.module.css";
 
-const PokeDescription = ({description}) => {
+const PokeDescription = ({description, loading}) => {
   return (
     <div className={styles.description}>
-      <p>{description}</p>
+      {loading ? <img className={styles.loading} src="/imgs/loading-red.gif" /> : <p>{description}</p>}
     </div>
   );
 };

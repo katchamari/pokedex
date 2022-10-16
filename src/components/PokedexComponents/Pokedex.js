@@ -12,10 +12,9 @@ const Pokedex = () => {
     name:'Bulbasaur', 
     num:'', 
     defaultImg:'',
-    description:''
+    description:'',
+    loading:true
   })
-
-
 
 // fills array with names for autocomplete
   useEffect(() => {
@@ -29,6 +28,7 @@ const Pokedex = () => {
   }, []);
 
   useEffect(() => {
+    setPokemon({...pokemon, loading:true});
       fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.name.toLowerCase()}`)
         .then((res) => {
           return res.json();
@@ -45,7 +45,13 @@ const Pokedex = () => {
                 ...pokemon, 
                 num:data3.order, 
                 defaultImg:data3.sprites.front_default,
-                description:String(engDescription[0].flavor_text)
+                description:engDescription[0].flavor_text.replace('\f',       '\n') 
+                .replace('\u00ad\n', '') 
+                .replace('\u00ad',   '') 
+                .replace(' -\n',     ' - ') 
+                .replace('-\n',      '-') 
+                .replace('\n',       ' '),
+                loading:false
               })
             });
 

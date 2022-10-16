@@ -16,7 +16,7 @@ const MainScreen = ({pokemon}) => {
           <Hole />
         </FlexNoWrap>
         <Name className="mb-15" name={pokemon.name} number={pokemon.num} />
-        <PokeImg src={pokemon.defaultImg} alt="Bulbasaur" height="200" />
+        <PokeImg src={pokemon.defaultImg} alt={pokemon.name} loading={pokemon.loading} height="200" />
 
         <RoundedLines className={styles["bottom-right-lines"]} />
       </div>

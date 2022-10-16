@@ -30,7 +30,10 @@ const Autocomplete = ({arr, search, savedQuery}) => {
 
   const queryItem = (item) => {
     setSearchQuery(item);
-    saveQuery({...savedQuery, name:item});
+    if(item !== query.name){
+      console.log('ooga');
+      saveQuery({...query, name:item});
+    }
   }
 
   let resultList = filteredResults.map((result, index) => {

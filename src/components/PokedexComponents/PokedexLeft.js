@@ -4,6 +4,7 @@ import PokeDescription from "./PokeDescription";
 import MainScreen from "./MainScreen";
 const PokedexLeft = ({pokemon}) => {
   const {description} = pokemon;
+  const {loading} = pokemon;
   return (
     <div className={styles["poke-left"]}>
       <span className={styles["top-button"]}></span>
@@ -27,7 +28,7 @@ const PokedexLeft = ({pokemon}) => {
           <img className={styles['inner-shadow']} src='imgs/pokedex-inner-shadow.png' />
           <MainScreen pokemon={pokemon} />
 
-          <PokeDescription description={description} />
+          <PokeDescription loading={loading} description={description} />
         </div>
       </div>
     </div>
